@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creative Colorlib SignUp Form</title>
+<style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        div{
+            margin: 5px;
+            padding:5px
+        }
+        table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+        input[type=radio] {
+          width: 1%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+        
+          box-sizing: border-box;
+        }
+        input{
+      width: 25%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+    
+      box-sizing: border-box;
+    }
+       
+        input[type=button]{
+                          width: 10%;
+        }
+       
+</style>
+
+</head>
+<body>
+      
+        <header>
+                <% include ../partials/header %>
+        </header>
+<form method="POST" action="/show_print_passbook">
+    <input type="number" name="accno" placeholder="Account No" required="Please enter Account No"/></br>
+    <input type="submit" value="Submit"><br>
+</form>
+
+<table>
+                <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>Balance</th>
+                    
+                </tr>
+                <%
+                if(result){
+
+                result.forEach(function(obj){ %>
+                        <tr>
+                          <td><%=obj.date%></td>
+                          <td><%=obj.time%></td>
+                          <td><%=obj.description%></td>
+                          <td><%=obj.balance%></td>                        
+                        </tr>
+                        <%}) }%>
+              
+        </table>
+        
+</body>
+</html>

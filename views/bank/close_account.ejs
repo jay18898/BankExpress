@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creative Colorlib SignUp Form</title>
+<style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        div{
+            margin: 5px;
+            padding:5px
+        }
+      
+        input[type=radio] {
+          width: 1%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+        
+          box-sizing: border-box;
+        }
+        input{
+      width: 25%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+    
+      box-sizing: border-box;
+    }
+       
+        input[type=button]{
+                          width: 10%;
+        }
+       
+</style>
+
+</head>
+<body>
+      
+        <header>
+                <% include ../partials/header %>
+        </header>
+<form method="POST" action="/insert_passbook">
+    <input type="number" name="accno" placeholder="Account No" required="Please enter Account No"/></br>
+    <input type="hidden" name="form" value="caform"/>
+    <input type="submit" value="Submit"><br>
+</form>
+<p><% if(msg) %><%=msg %></p>
+        
+</body>
+</html>
